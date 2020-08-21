@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "pkg-api",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "API for pkg.",
+	"repository": "https://github.com/Richienb/pkg-api.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -17,12 +17,25 @@
 		"lint": "xo",
 		"test": "xo && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"pkg",
+		"build",
+		"api",
+		"cli",
+		"compile"
+	],
+	"dependencies": {
+		"dargs": "^7.0.0"
+	},
 	"devDependencies": {
 		"ava": "^3.11.1",
 		"eslint-config-richienb": "^0.4.2",
+		"path-exists": "^4.0.0",
+		"pkg": "^4.4.9",
 		"xo": "^0.33.0"
+	},
+	"peerDependencies": {
+		"pkg": ">=4"
 	},
 	"xo": {
 		"extends": "richienb"

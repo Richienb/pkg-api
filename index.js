@@ -1,9 +1,27 @@
 "use strict"
 
-module.exports = (input, { postfix = "rainbows" } = {}) => {
-	if (typeof input !== "string") {
-		throw new TypeError(`Expected a string, got ${typeof input}`)
-	}
+const dargs = require("dargs")
+const { exec } = require("pkg")
 
-	return `${input} & ${postfix}`
-}
+module.exports = (input, options) => exec(dargs({
+	_: [input],
+	...options
+}, {
+	includes: [
+		"_",
+		"build",
+		"debug",
+		"config",
+		"options",
+		"output",
+		"outDir",
+		"targets"
+	],
+	aliases: {
+		build: "b",
+		debug: "d",
+		config: "c",
+		options: "o",
+		targets: "t"
+	}
+}))

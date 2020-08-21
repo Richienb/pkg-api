@@ -1,13 +1,12 @@
 const test = require("ava")
-const theModule = require(".")
+const pathExists = require("path-exists")
+const pkg = require(".")
 
-test("main", t => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number"
+test("main", async t => {
+	await pkg("fixture.js", {
+		targets: "node10-win",
+		output: "dist/output.exe"
 	})
 
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+	t.true(await pathExists("dist/output.exe"))
 })
