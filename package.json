@@ -1,6 +1,6 @@
 {
 	"name": "pkg-api",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "API for pkg.",
 	"repository": "https://github.com/Richienb/pkg-api.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
