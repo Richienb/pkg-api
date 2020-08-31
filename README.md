@@ -18,7 +18,7 @@ const pkg = require("pkg-api");
 await pkg("index.js", {
 	targets: "node10-win",
 	output: "dist/output.exe"
-);
+});
 ```
 
 ## API
