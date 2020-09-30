@@ -1,9 +1,9 @@
 "use strict"
 
 const dargs = require("dargs")
-const { exec } = require("pkg")
+const { exec: pkg } = require("pkg")
 
-module.exports = (input, options) => exec(dargs({
+module.exports = (input, options) => pkg(dargs({
 	_: [input],
 	...options
 }, {
